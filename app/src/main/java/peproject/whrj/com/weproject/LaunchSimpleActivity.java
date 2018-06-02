@@ -37,7 +37,7 @@ public class LaunchSimpleActivity  extends AppCompatActivity{
         }
         else
         {
-
+            setContentView(R.layout.item_launch_1);
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
