@@ -19,12 +19,14 @@
     />
     </FrameLayout>
 
-<TextView
+<android.support.design.widget.NavigationView
+    android:id="@+id/nav_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:text="This"
-    android:background="#FFF"/>
+    app:menu="@menu/slider_menu"
+    app:headerLayout="@layout/slider_head"
+    />
 
 
 </android.support.v4.widget.DrawerLayout>

@@ -13,15 +13,16 @@ import android.widget.Button;
 import adapter.peproject.whrj.com.weproject.LaunchSimpleAdapter;
 
 public class LaunchSimpleActivity  extends AppCompatActivity{
-    //声明引导页的图片数组
+
     private SharedPreferences pref;
+    //声明引导页的图片数组，将启动页要展示的图片放入
     private int[] launchimageArray={R.drawable.guide_bg1,R.drawable.guide_bg2,R.drawable.guide_bg3,R.drawable.guide_bg4};
 
     protected void onCreate(Bundle saveInstanceState)
     {
 
         super.onCreate(saveInstanceState);
-
+        //读取配置文件信息决定要不要进入启动页界面
         pref=getSharedPreferences("logtime",MODE_PRIVATE);
         if(pref.getInt("logtime",0)==0)
         {
