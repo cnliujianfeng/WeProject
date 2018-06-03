@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--  设置为单选按钮组-->
+<group android:checkableBehavior="single">
+    <item android:id="@+id/nav_call"
+        android:icon="@drawable/phone"
+        android:title="Call"/>
+    <item android:id="@+id/nav_friend"
+        android:icon="@drawable/lianxi"
+        android:title="Friends"/>
+    <item android:id="@+id/find"
+        android:icon="@drawable/shousuo"
+        android:title="Find"/>
+    <item android:id="@+id/mail"
+        android:icon="@drawable/messg"
+        android:title="Mail"/>
+    <item android:id="@+id/set"
+        android:icon="@drawable/sett"
+        android:title="Seting"/>
+</group>
+</menu>
