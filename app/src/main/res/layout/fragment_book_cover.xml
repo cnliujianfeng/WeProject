@@ -1,18 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e1dfdf"
 
-    <ImageView
-        android:id="@+id/iv_book_cover"
+   >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp"
+   >
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bt_shape"
+        android:layout_margin="10dp"
+        android:layout_height="40dp"
+        android:text="尺子"
+        style="?android:attr/borderlessButtonStyle"
+        />
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bt_shape"
+        android:layout_margin="10dp"
+        android:layout_height="40dp"
+        android:text="应用管理"
+        style="?android:attr/borderlessButtonStyle"
+        />
+</LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="5dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/book_cover" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp"
+        >
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_shape"
+            android:layout_margin="10dp"
+            android:layout_height="40dp"
+            android:text="应用管理"
+            style="?android:attr/borderlessButtonStyle"
+            />
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_shape"
+            android:layout_margin="10dp"
+            android:layout_height="40dp"
+            android:text="应用管理"
+            style="?android:attr/borderlessButtonStyle"
+            />
+    </LinearLayout>
 
-   <Button
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="点击"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp"
+        >
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_shape"
+            android:layout_margin="10dp"
+            android:layout_height="40dp"
+            android:text="应用管理"
+            style="?android:attr/borderlessButtonStyle"
+            />
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_shape"
+            android:layout_margin="10dp"
+            android:layout_height="40dp"
+            android:text="应用管理"
+            style="?android:attr/borderlessButtonStyle"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp"
+        >
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_shape"
+            android:layout_margin="10dp"
+            android:layout_height="40dp"
+            android:text="应用管理"
+            style="?android:attr/borderlessButtonStyle"
+            />
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_shape"
+            android:layout_margin="10dp"
+            android:layout_height="40dp"
+            android:text="应用管理"
+            style="?android:attr/borderlessButtonStyle"
+            />
+    </LinearLayout>
+
+
 </LinearLayout>

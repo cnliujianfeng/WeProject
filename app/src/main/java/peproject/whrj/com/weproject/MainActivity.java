@@ -1,9 +1,12 @@
 package peproject.whrj.com.weproject;
 
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -19,14 +22,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.URL;
 import java.util.ArrayList;
 
+import adapter.peproject.whrj.com.weproject.BookCoverFragment;
 import adapter.peproject.whrj.com.weproject.GoodsPagerAdapter;
 
 
@@ -41,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
         //Toolbar替换默认ActiviBar
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        View decorview = getWindow().getDecorView();
+        if(Build.VERSION.SDK_INT>=21){//5.0以上的系统支持
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |View.SYSTEM_UI_FLAG_LAYOUT_STABLE;//表示让应用主题内容占据系统状态栏的空间
+            decorview.setSystemUiVisibility(option);
+            getWindow().setStatusBarColor(Color.parseColor("#00ffffff"));//设置状态栏颜色为透明
+
+        }
+
 
         mTitleArray.add("商品");
         mTitleArray.add("详情");
@@ -55,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
 
         initTabLayout();
         initTabViewPager();
+
+
+
 
 
         //获取滑动布局
@@ -110,18 +131,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
+
+
     //初始化标签
     private void initTabLayout() {
         //从布局文件中获取标签布局
         tab_title=findViewById(R.id.tab_title);
         tab_title.addTab(tab_title.newTab().setCustomView(R.layout.item_toolbar1));
-        TextView tv_toolbar1=findViewById(R.id.tv_toolbar1);
-        tv_toolbar1.setText(mTitleArray.get(0));
+        ImageView imageView=(ImageView)findViewById(R.id.iv_point1) ;
+        imageView.setImageResource(R.drawable.home);
 
         tab_title.addTab(tab_title.newTab().setCustomView(R.layout.item_toolbar2));
-        TextView tv_toolbar2 = findViewById(R.id.tv_toolbar2);
-        tv_toolbar2.setText(mTitleArray.get(1));
+        ImageView imageView1=(ImageView)findViewById(R.id.iv_point2) ;
+        imageView1.setImageResource(R.drawable.gongju);
         // 给tab_title添加标签选中监听器，该监听器默认绑定了翻页视图vp_content
         tab_title.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(vp_content));
 
@@ -170,4 +194,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
 }
