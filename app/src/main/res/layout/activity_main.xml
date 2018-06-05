@@ -6,41 +6,53 @@
     android:layout_height="match_parent"
    >
 
-
       <android.support.design.widget.CoordinatorLayout
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          >
 
+          >
           <android.support.design.widget.AppBarLayout
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content"
+              android:background="#cd7d7d"
+              >
                <android.support.v7.widget.Toolbar
                    android:id="@+id/toolbar"
+                   app:contentInsetLeft="0dp"
+                   app:contentInsetStart="0dp"
+                   app:contentInsetStartWithNavigation="0dp"
+                   app:title="半个木函"
                    android:layout_width="match_parent"
-                   android:layout_height="110dp"
-                   android:minHeight="110dp"
-                   android:gravity="center"
-                   android:background="?attr/colorPrimary"
+                   android:layout_height="70dp"
+                   android:layout_marginTop="10dp"
+                   android:minHeight="70dp"
+                   android:background="#cd7d7d"
                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
-                   <RelativeLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content">
-
-                       <!-- 两个图标选择块-->
-                       <android.support.design.widget.TabLayout
-                           android:id="@+id/tab_title"
-                           android:layout_width="wrap_content"
-                           android:layout_height="match_parent"
-                           android:layout_centerInParent="true"
-                           app:tabIndicatorColor="#ff0000"
-                           app:tabIndicatorHeight="2dp" />
-                   </RelativeLayout>
-
-
                </android.support.v7.widget.Toolbar>
+              <TextView
+                  android:layout_marginTop="-18dp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#fff"
+                  android:text="缘,妙不可言...."
+                  android:layout_marginLeft="105dp"/>
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="#cd7d7d">
+
+                  <!-- 两个图标选择块-->
+                  <android.support.design.widget.TabLayout
+                      android:id="@+id/tab_title"
+                      android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+
+                      android:layout_centerInParent="true"
+                      app:tabIndicatorColor="#cb5b5b"
+                      app:tabIndicatorHeight="2dp" />
+              </RelativeLayout>
           </android.support.design.widget.AppBarLayout>
           <View
               android:layout_width="match_parent"

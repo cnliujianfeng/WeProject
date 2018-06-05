@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="180dp"
     android:padding="10dp"
-    android:background="?attr/colorPrimary">
+    android:background="#cd7d7d">
 <de.hdodenhof.circleimageview.CircleImageView
     android:id="@+id/icon_img"
     android:layout_width="70dp"
     android:layout_height="70dp"
     android:src="@drawable/head"
     android:layout_centerInParent="true"/>
+
 <TextView
     android:id="@+id/mail"
     android:layout_width="wrap_content"
@@ -17,4 +18,14 @@
     android:text="liu@126.com"
     android:textColor="#FFF"
     android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:layout_above="@id/mail"
+        android:text="无名氏"
+        android:textColor="#fff"
+        android:textSize="14sp"/>
+
 </RelativeLayout>

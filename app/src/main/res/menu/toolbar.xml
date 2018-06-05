@@ -2,15 +2,40 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<item
-        android:id="@+id/back"
-        android:title="Back"
-        app:showAsAction="never"/>
-<item
-    android:id="@+id/settings"
-    android:title="Settings"
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/shousuo"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:inputType="textCapWords"
+        android:imeOptions="actionSearch"
+        android:title="搜索" />
+
+
+    <item
+    android:id="@+id/back"
+    android:title="Back"
     app:showAsAction="never"/>
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        app:showAsAction="never"/>
 
-
+    <item
+        android:id="@+id/back2"
+        android:title="Me"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/settings2"
+        android:title="Only"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/back3"
+        android:title="Shi"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/settings3"
+        android:title="Coushu"
+        app:showAsAction="never"/>
 
 </menu>
