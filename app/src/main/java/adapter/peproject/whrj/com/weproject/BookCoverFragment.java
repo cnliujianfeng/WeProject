@@ -27,15 +27,7 @@ public class BookCoverFragment extends Fragment {
         // 根据布局文件fragment_book_cover.xml生成视图对象
         mView = inflater.inflate(R.layout.fragment_book_cover, container, false);
 
-        Button button=(Button)mView.findViewById(R.id.btn);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel: "));
-                startActivity(intent);
-            }
-        });
+
         return mView;
 
     }
