@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--设置选项卡的圆角为10dp-->
+    <corners
+        android:radius="8dp"
+
+        />
+
+    <solid android:color="#ff33b5e5"/>
+
+</shape>

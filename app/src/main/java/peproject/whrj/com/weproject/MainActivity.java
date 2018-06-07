@@ -1,12 +1,9 @@
 package peproject.whrj.com.weproject;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Icon;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -22,26 +19,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SearchView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.net.URL;
+import com.loopeer.cardstack.CardStackView;
+
 import java.util.ArrayList;
 
-import adapter.peproject.whrj.com.weproject.BookCoverFragment;
 import adapter.peproject.whrj.com.weproject.GoodsPagerAdapter;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener {
+
 
 
     private DrawerLayout mDrawerLayout;
@@ -49,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager vp_content;//翻页视图对象
     private TabLayout tab_title;//标签布局对象
     private ArrayList<String> mTitleArray = new ArrayList<String>(); //标题图标
+
+    private CardStackView mCardStack;
+
 
 
 
@@ -137,6 +134,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+    }
+    public void onItemExpend(boolean expend) {
 
     }
 
