@@ -1,6 +1,7 @@
 package peproject.whrj.com.weproject;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -19,15 +20,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.loopeer.cardstack.CardStackView;
+
+import junit.framework.Test;
 
 import java.util.ArrayList;
 
@@ -54,20 +60,17 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
         //Toolbar替换默认ActiviBar
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
 
 
-
         setSupportActionBar(toolbar);
         View decorview = getWindow().getDecorView();
-        setStatus();
-//        if(Build.VERSION.SDK_INT>=21){//5.0以上的系统支持
-//            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |View.SYSTEM_UI_FLAG_LAYOUT_STABLE;//表示让应用主题内容占据系统状态栏的空间
-//            decorview.setSystemUiVisibility(option);
-//            getWindow().setStatusBarColor(Color.parseColor("#00ffffff"));//设置状态栏颜色为透明
-//
-//        }
+        setStatus();//状态栏沉浸
 
 
         mTitleArray.add("商品");
@@ -76,6 +79,9 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
 
         initTabLayout();
         initTabViewPager();
+
+
+
 
 
 
@@ -141,7 +147,17 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     public void onItemExpend(boolean expend) {
 
     }
+    //悬浮框点击事件
+    public void Test(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.btn:  Intent intent4 =  new Intent(Settings.ACTION_SETTINGS);
+                startActivity(intent4);
+                break;
 
+        }
+    }
 
     private void setStatus() {
         getWindow().setStatusBarColor(Color.TRANSPARENT);
