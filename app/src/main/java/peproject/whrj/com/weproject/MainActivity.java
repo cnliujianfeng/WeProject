@@ -20,30 +20,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.loopeer.cardstack.CardStackView;
 
-import junit.framework.Test;
 
 import java.util.ArrayList;
 
 import adapter.peproject.whrj.com.weproject.GoodsPagerAdapter;
 
 
-public class MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener {
+public class   MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener
+{
 
 
-
+    private Context context=this;
     private DrawerLayout mDrawerLayout;
     //内容视图
     private ViewPager vp_content;//翻页视图对象
@@ -53,15 +50,19 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     private CardStackView mCardStack;
 
 
-
+    public void Test(View v)
+    {
+        Intent intent4 =  new Intent(MainActivity.this,TwoActivity.class);
+        System.out.print(1);
+        startActivity(intent4);
+        System.out.print(1);
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
 
         //Toolbar替换默认ActiviBar
@@ -79,12 +80,6 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
 
         initTabLayout();
         initTabViewPager();
-
-
-
-
-
-
 
 
         //获取滑动布局
@@ -148,16 +143,7 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
 
     }
     //悬浮框点击事件
-    public void Test(View view)
-    {
-        switch (view.getId())
-        {
-            case R.id.btn:  Intent intent4 =  new Intent(Settings.ACTION_SETTINGS);
-                startActivity(intent4);
-                break;
 
-        }
-    }
 
     private void setStatus() {
         getWindow().setStatusBarColor(Color.TRANSPARENT);
@@ -229,5 +215,6 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
         }
         return true;
     }
+
 
 }

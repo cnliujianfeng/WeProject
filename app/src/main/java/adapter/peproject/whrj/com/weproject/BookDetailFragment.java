@@ -1,16 +1,11 @@
 package adapter.peproject.whrj.com.weproject;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import peproject.whrj.com.weproject.R;
 
@@ -25,7 +20,7 @@ public class BookDetailFragment extends Fragment {
         mContext = getActivity(); // 获取活动页面的上下文
         // 根据布局文件fragment_book_detail.xml生成视图对象
 
-        mView = inflater.inflate(R.layout.fragment_book_detail, container, false);
+     mView = inflater.inflate(R.layout.fragment_book_detail, container, false);
 
         return mView;
 

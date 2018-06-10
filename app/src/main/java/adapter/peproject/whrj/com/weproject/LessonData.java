@@ -5,14 +5,14 @@ package adapter.peproject.whrj.com.weproject;
  */
 
 public class LessonData {
-    String lessonName;
-    String lessonScore;
+    private   String lessonName;
+    private String lessonScore;
 
     public LessonData(String lessonName, String lessonScore) {
         this.lessonName = lessonName;
         this.lessonScore = lessonScore;
-    }
 
+    }
     public String getLessonName() {
         return lessonName;
     }

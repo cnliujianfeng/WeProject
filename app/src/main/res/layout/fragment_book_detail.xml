@@ -26,7 +26,7 @@
             android:layout_marginRight="9dp"
             android:onClick="Test"
             android:layout_height="40dp"
-            android:text="尺子"
+            android:text="应用管理"
             style="?android:attr/borderlessButtonStyle"
             />
         <Button

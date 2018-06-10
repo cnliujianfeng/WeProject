@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cd7d7d"
+        >
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:title="应用管理"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:minHeight="70dp"
+                android:background="#cd7d7d"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+            </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reclcler_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+        tools:ignore="NotSibling">
+
+    </android.support.v7.widget.RecyclerView>
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
