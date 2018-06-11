@@ -3,6 +3,7 @@ package peproject.whrj.com.weproject;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -11,6 +12,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -29,6 +31,9 @@ public class TwoActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState/*, @Nullable PersistableBundle persistentState*/) {
         super.onCreate(savedInstanceState/*, persistentState*/);//在5.0以上如果不把这个注释掉跳转页面后时空白。
         setContentView(R.layout.yingyongxinxi);
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+
         datalist = new ArrayList<Data>();
         ArrayList<Data> appinfoList = GetApp.getAppInfo(TwoActivity.this);
         for (Data d:appinfoList)
