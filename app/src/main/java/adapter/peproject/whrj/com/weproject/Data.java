@@ -1,12 +1,18 @@
 package adapter.peproject.whrj.com.weproject;
 
-public class Data {
-    private String mingzi;
-    private String baoming;
-    private int tubiao;
-    private String daxiao;
+import android.graphics.drawable.Drawable;
 
-    public Data(String mingzi,String baoming,String daxiao,int tubiao)
+public class Data {
+    public String mingzi;
+    public String baoming;
+    public Drawable tubiao;
+    public String daxiao;
+
+    public Data()
+    {
+
+    }
+    public Data(String mingzi,String baoming,String daxiao,Drawable tubiao)
     {
            this.baoming=baoming;
            this.mingzi=mingzi;
@@ -21,7 +27,7 @@ public class Data {
         return baoming;
     }
 
-    public int getTubiao() {
+    public Drawable getTubiao() {
         return tubiao;
     }
 

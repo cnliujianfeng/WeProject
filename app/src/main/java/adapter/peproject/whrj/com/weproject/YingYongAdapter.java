@@ -36,7 +36,7 @@ public class YingYongAdapter extends RecyclerView.Adapter<YingYongAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Data data=list.get(position);
-        holder.tubiao.setImageResource(data.getTubiao());
+        holder.tubiao.setImageDrawable(data.getTubiao());
         holder.daxiao.setText(data.getDaxiao());
         holder.mingzi.setText(data.getMingzi());
         holder.baoming.setText(data.getBaoming());
