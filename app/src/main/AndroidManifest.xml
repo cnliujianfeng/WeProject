@@ -25,6 +25,8 @@
        </activity>
 
         <activity android:name=".TwoActivity"></activity>
+        <activity android:name=".ErWeiMaSc"></activity>
+
     </application>
 
 </manifest>

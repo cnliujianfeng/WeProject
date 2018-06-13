@@ -58,7 +58,8 @@
             android:layout_marginLeft="9dp"
             android:layout_marginRight="9dp"
             android:layout_height="40dp"
-            android:text="尺子"
+            android:onClick="Sm"
+            android:text="扫描二维码"
             style="?android:attr/borderlessButtonStyle"
             />
         <Button
@@ -67,9 +68,10 @@
             android:layout_weight="1"
             android:background="@drawable/bt_shape"
             android:layout_marginLeft="9dp"
+            android:onClick="Sc"
             android:layout_marginRight="9dp"
             android:layout_height="40dp"
-            android:text="应用管理"
+            android:text="生成二维码"
             style="?android:attr/borderlessButtonStyle"
             />
     </LinearLayout>

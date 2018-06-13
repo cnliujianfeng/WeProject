@@ -29,9 +29,15 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.loopeer.cardstack.CardStackView;
-
+import com.yanzhenjie.permission.Action;
+import com.yanzhenjie.permission.AndPermission;
+import com.yanzhenjie.permission.Permission;
+import com.yzq.zxinglibrary.android.CaptureActivity;
+import com.yzq.zxinglibrary.bean.ZxingConfig;
+import com.yzq.zxinglibrary.common.Constant;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import adapter.peproject.whrj.com.weproject.GoodsPagerAdapter;
 
@@ -46,18 +52,52 @@ public class   MainActivity extends AppCompatActivity implements CardStackView.I
     private ViewPager vp_content;//翻页视图对象
     private TabLayout tab_title;//标签布局对象
     private ArrayList<String> mTitleArray = new ArrayList<String>(); //标题图标
-
+    private int REQUEST_CODE_SCAN = 111;
     private CardStackView mCardStack;
 
 
     public void Test(View v)
     {
-        Intent intent4 =  new Intent(MainActivity.this,TwoActivity.class);
-        System.out.print(1);
-        startActivity(intent4);
-        System.out.print(1);
+        Intent intent =  new Intent(MainActivity.this,TwoActivity.class);
+        startActivity(intent);
     }
+    public void Sm(View v)
+    {
+        AndPermission.with(this).permission(Permission.CAMERA,Permission.READ_EXTERNAL_STORAGE)
+                .onGranted(new Action() {
+                    @Override
+                    public void onAction(List<String> permissions) {
+                        Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
+                        ZxingConfig config=new ZxingConfig();
+                        config.setPlayBeep(true);//扫描声音
+                        config.setShake(true);//是否振动
+                        config.setDecodeBarCode(false);//是否扫描条形码
+                        config.setReactColor(R.color.white);
+                        config.setFrameLineColor(R.color.white);
+                        config.setFullScreenScan(false);
+                        intent.putExtra(Constant.INTENT_ZXING_CONFIG,config);
+                        startActivityForResult(intent,REQUEST_CODE_SCAN);
+                    }
+                }).onDenied(new Action() {
+            @Override
+            public void onAction(List <String> permissions) {
+                Uri packageURI = Uri.parse("package:" + getPackageName());
+                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, packageURI);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
+                startActivity(intent);
+
+                Toast.makeText(MainActivity.this, "没有权限无法扫描呦", Toast.LENGTH_LONG).show();
+            }
+        }).start();
+
+
+    }
+    public void Sc(View v)
+    {
+        Intent intent =  new Intent(MainActivity.this,ErWeiMaSc.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
