@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.google.zxing.WriterException;
 import com.yzq.zxinglibrary.encode.CodeCreator;
 
-public class ErWeiMaSc extends AppCompatActivity {
+public class  ErWeiMaSc extends AppCompatActivity {
     private EditText editText;
     private String contentEtString;
     private ImageView imageView;

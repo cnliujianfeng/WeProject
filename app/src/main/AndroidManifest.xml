@@ -26,7 +26,8 @@
 
         <activity android:name=".TwoActivity"></activity>
         <activity android:name=".ErWeiMaSc"></activity>
-
+        <activity android:name=".BiaoQingActivity"></activity>
+        <activity android:name=".SaveImgActivity"></activity>
     </application>
 
 </manifest>

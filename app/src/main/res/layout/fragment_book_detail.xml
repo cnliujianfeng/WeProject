@@ -37,7 +37,8 @@
             android:layout_marginLeft="9dp"
             android:layout_marginRight="9dp"
             android:layout_height="40dp"
-            android:text="应用管理"
+            android:text="表情包制作"
+            android:onClick="ZZ"
             style="?android:attr/borderlessButtonStyle"
             />
     </LinearLayout>

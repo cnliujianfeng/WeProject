@@ -56,11 +56,13 @@ public class   MainActivity extends AppCompatActivity implements CardStackView.I
     private CardStackView mCardStack;
 
 
+    //跳转应用管理
     public void Test(View v)
     {
         Intent intent =  new Intent(MainActivity.this,TwoActivity.class);
         startActivity(intent);
     }
+    //跳转二维码
     public void Sm(View v)
     {
         AndPermission.with(this).permission(Permission.CAMERA,Permission.READ_EXTERNAL_STORAGE)
@@ -98,7 +100,12 @@ public class   MainActivity extends AppCompatActivity implements CardStackView.I
         Intent intent =  new Intent(MainActivity.this,ErWeiMaSc.class);
         startActivity(intent);
     }
-
+    //跳转表情包制作
+    public void ZZ(View view)
+    {
+        Intent intent =  new Intent(MainActivity.this,BiaoQingActivity.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
