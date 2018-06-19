@@ -1,10 +1,13 @@
 package peproject.whrj.com.weproject;
 
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -20,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -40,12 +44,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adapter.peproject.whrj.com.weproject.GoodsPagerAdapter;
+import adapter.peproject.whrj.com.weproject.WeiboDialogUtils;
 
 
 public class   MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener
 {
 
-
+    private Dialog mWeiboDialog;
     private Context context=this;
     private DrawerLayout mDrawerLayout;
     //内容视图
@@ -56,9 +61,46 @@ public class   MainActivity extends AppCompatActivity implements CardStackView.I
     private CardStackView mCardStack;
 
 
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+
+                    WeiboDialogUtils.closeDialog(mWeiboDialog);
+                    break;
+            }
+        }
+    };
+
+    private long exitTime = 0;
+     @Override
+     public boolean onKeyDown(int keyCode, KeyEvent event) {
+             if (keyCode == KeyEvent.KEYCODE_BACK
+                     && event.getAction() == KeyEvent.ACTION_DOWN) {
+                     if ((System.currentTimeMillis() - exitTime) > 2000) {
+
+                                mDrawerLayout.closeDrawers();
+
+
+                                //弹出提示，可以有多种方式
+                                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                                exitTime = System.currentTimeMillis();
+
+                         } else {
+                             finish();
+                         }
+                     return true;
+                 }
+
+             return super.onKeyDown(keyCode, event);
+         }
     //跳转应用管理
     public void Test(View v)
     {
+        mWeiboDialog = WeiboDialogUtils.createLoadingDialog(MainActivity.this, "加载中...");
+        mHandler.sendEmptyMessageDelayed(1, 1000);
         Intent intent =  new Intent(MainActivity.this,TwoActivity.class);
         startActivity(intent);
     }
@@ -114,9 +156,8 @@ public class   MainActivity extends AppCompatActivity implements CardStackView.I
 
         //Toolbar替换默认ActiviBar
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
-
-
         setSupportActionBar(toolbar);
+
         View decorview = getWindow().getDecorView();
         setStatus();//状态栏沉浸
 

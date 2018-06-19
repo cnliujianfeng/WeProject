@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="#33CCCCCC"
     >
 
     <android.support.design.widget.CoordinatorLayout
@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
-                    android:text="应用管理"
+                    android:text="表情包制作"
                     android:textSize="16sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="30dp"/>

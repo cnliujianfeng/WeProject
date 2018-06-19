@@ -44,7 +44,9 @@ public class BiaoQingAdapter extends RecyclerView.Adapter<BiaoQingAdapter.ViewHo
             public void onClick(View v) {
                 int position=holder.getAdapterPosition();
                 BiaoQing biaoQing=biaoQingList.get(position);
-                //未完待续
+
+
+
                 Intent intent=new Intent(mContext, SaveImgActivity.class);
                 intent.putExtra("Biaoqing",biaoQing.getImageView());
                 mContext.startActivity(intent);
@@ -60,7 +62,7 @@ public class BiaoQingAdapter extends RecyclerView.Adapter<BiaoQingAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         BiaoQing biaoQing=biaoQingList.get(position);
-        Glide.with(mContext).load(biaoQing.getImageView()).into(holder.cardImg);
+        Glide.with(mContext).load(biaoQing.getImageView()).override(80,80).into(holder.cardImg);
 
     }
 

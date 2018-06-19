@@ -49,6 +49,7 @@ public class BiaoQingActivity extends AppCompatActivity {
 
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.biaoqing_recyclerview);
         GridLayoutManager layoutManager=new GridLayoutManager(this,4);
+
         recyclerView.setLayoutManager(layoutManager);
         adapter=new BiaoQingAdapter(biaoQingList);
         recyclerView.setAdapter(adapter);
